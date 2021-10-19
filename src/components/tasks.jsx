@@ -29,7 +29,7 @@ export default class tasks extends Component {
                                             this.props.deleteTask(task.id)
                                         }}
                                         className='btn'
-                                        style={{marginLeft : '1em'}}>
+                                        style={{margin : '1em'}}>
                                         <i className="material-icons">delete</i>
                                     </button>
                                 </td>

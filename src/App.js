@@ -54,7 +54,13 @@ export default class App extends Component {
   }
 
   editTask = () => {
-    let { title, description, id, tasks } = this.state
+    let { title, description, id, tasks, totalTasks } = this.state
+    if (title === ''){
+      title = `Task ${totalTasks + 1}`
+    }
+    if (description === ''){
+      description = 'No description'
+    }
     const task = document.getElementById(id);
     task.querySelector('.taskName').textContent = title;
     task.querySelector('.taskDescription').textContent = description;
@@ -93,7 +99,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='teal lighten-5' style={{minHeight : '100vh'}}>
+      <div className='teal lighten-5' style={{minHeight : '100vh', paddingBottom : '.5em'}}>
         <header 
           className='teal darken-1 white-text'
           style={{padding : '.5em', fontSize : '2em'}}>
